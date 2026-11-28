@@ -115,6 +115,76 @@ python3 physitrack_agent.py tools     # list Cotlet.dev tools
 python3 physitrack_agent.py serve     # start the stdio MCP server (same as no argument)
 ```
 
+## What you can ask your AI to do in Physitrack
+
+These are real jobs Physitrack users asked about. Cotlet lets ChatGPT, Claude or any MCP client do them in your own signed-in Physitrack account.
+
+### Adherence and patient contact
+
+#### Can AI find the patients in Physitrack who are not doing their exercises and draft a check-in message?
+
+Yes. Physitrack calculates adherence for each patient. With Cotlet, your agent reads adherence in your signed-in account, lists active patients under your percent for the week and drafts a short check-in for each. Nothing is sent until you say yes.
+
+Ask your agent: "Which active Physitrack patients had under 50% adherence this week? Draft a short check-in message for each."
+
+As an API endpoint: Yes. Save the low-adherence list as an endpoint in Cotlet and call it every Monday from n8n, Make, Zapier or a script to get who to contact.
+
+#### Can AI answer my unread patient messages in Physitrack?
+
+Yes. With Cotlet, your agent opens the unread messages in your signed-in Physitrack account, lists them by patient and drafts a reply to each. Nothing is sent until you say yes, so you read every reply first.
+
+Ask your agent: "List unread messages from patients in Physitrack and draft a reply to each. Send nothing yet."
+
+As an API endpoint: Yes. Save the unread list as an endpoint in Cotlet and call it every morning from n8n, Make or Zapier to get the messages waiting.
+
+#### Can AI find the Physitrack patients who never opened PhysiApp and remind them?
+
+Yes. With Cotlet, your agent lists patients in your signed-in Physitrack account who got a program in the last 14 days but never logged in to PhysiApp. It drafts a reminder with each patient's access code. Nothing is sent until you say yes.
+
+Ask your agent: "Which Physitrack patients got a program in the last 14 days but never logged in to PhysiApp? Draft a reminder with their access code."
+
+As an API endpoint: Yes. Save the never-opened list as an endpoint in Cotlet and call it every week from n8n, Make or Zapier.
+
+### Programs and templates
+
+#### Can AI assign a Physitrack template to several patients at once?
+
+Yes. With Cotlet, your agent opens each patient in your signed-in Physitrack account and assigns your chosen programme template, such as Knee rehab week 1. It shows you the list of patients first. Nothing is assigned until you say yes.
+
+Ask your agent: "Assign my Knee rehab week 1 template in Physitrack to these five patients. Show me the list before you assign."
+
+#### Can AI save Physitrack program PDFs to my patient files?
+
+Yes. Physitrack lets you print an exercise programme. With Cotlet, your agent opens each programme you assigned today in your signed-in account and downloads its PDF, ready to attach to the patient file. It only reads and downloads.
+
+Ask your agent: "Download the PDF of every program I assigned in Physitrack today so I can attach them to the patient files."
+
+### Outcomes and RTM
+
+#### Can AI export Physitrack outcome measures to a spreadsheet?
+
+Yes. Physitrack lets you view and download the aggregate results of assigned outcome measures. With Cotlet, your agent downloads this month's results from your signed-in account and puts each patient's start and latest score in your sheet.
+
+Ask your agent: "Download this month's Physitrack outcome measure results and put the start and latest score per patient in my sheet."
+
+As an API endpoint: Yes. Save the score table as an endpoint in Cotlet that returns JSON per patient, and send it to Google Sheets from n8n, Make or a script each month.
+
+#### Can AI track RTM days in Physitrack for billing?
+
+Yes. With Cotlet, your agent reads the remote therapeutic monitoring data in your signed-in Physitrack account and lists which RTM patients have 16 or more days of data this month and who is close to 16. It only reads. Billing decisions stay with you.
+
+Ask your agent: "Which Physitrack RTM patients have 16 or more days of data this month, and who is close to 16?"
+
+As an API endpoint: Yes. Save the RTM check as an endpoint in Cotlet and call it every week from n8n, Make or Zapier to see who is close to 16 days.
+
+### Invoices
+
+#### How do I download all my Physitrack invoices at once?
+
+Yes. Physitrack lets you download an invoice from your account. With Cotlet, your agent opens your signed-in account and downloads every invoice for this financial year as PDFs, so you can hand them to your accountant. It only reads and downloads.
+
+Ask your agent: "Download all my Physitrack invoices for this financial year as PDFs."
+
 ## Questions from Physitrack users
 
 **Does Physitrack have an API?**
